@@ -1,0 +1,33 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+
+env:
+  OPENSCAD_URL: https://files.openscad.org/snapshots/OpenSCAD-2026.11.20-x86_64.AppImage
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install OpenSCAD
+        run: |
+          curl -fsSL -o openscad.AppImage "$OPENSCAD_URL"
+          chmod +x openscad.AppImage
+          ./openscad.AppImage --appimage-extract > /dev/null
+          echo "OPENSCAD=$PWD/squashfs-root/AppRun" >> "$GITHUB_ENV"
+      - name: Build zips
+        run: |
+          scripts/build.sh
+          for p in r4 r5; do
+            (cd stl/$p && zip -q ../../planet17-$p.zip *.stl)
+          done
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" planet17-r4.zip planet17-r5.zip \
+            --title "$GITHUB_REF_NAME" --generate-notes

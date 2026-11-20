@@ -1,0 +1,17 @@
+{
+  "fileFormatVersion": "1",
+  "parameterSets": {
+    "r4": {
+      "sun_teeth": "15",
+      "planet_teeth": "15",
+      "ring_teeth": "45",
+      "planets": "3"
+    },
+    "r5": {
+      "sun_teeth": "16",
+      "planet_teeth": "24",
+      "ring_teeth": "64",
+      "planets": "4"
+    }
+  }
+}

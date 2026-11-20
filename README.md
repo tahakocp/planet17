@@ -1,6 +1,6 @@
 # planet17
 
-A parametric, 3D-printable planetary gearbox for NEMA 17 steppers. 4:1 or 5:1 out of the box, any ratio you can build from a tooth count, and the CI proves the gears do not collide at any angle before you waste filament.
+A parametric, 3D-printable planetary gearbox for NEMA 17 steppers. 4:1 or 5:1 out of the box, any ratio you can build from a tooth count, and CI checks the gears do not collide at a dozen sun angles before you waste filament.
 
 ![planet17 4:1 assembly](images/assembly.png)
 

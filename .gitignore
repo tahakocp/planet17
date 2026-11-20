@@ -1,0 +1,6 @@
+*.png.tmp
+.DS_Store
+*.swp
+/out/
+/tmp/
+.env

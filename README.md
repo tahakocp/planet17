@@ -8,7 +8,7 @@ Nothing in this repository has been printed or run on a motor. Everything below 
 
 ## Get the parts
 
-Download `planet17-r4.zip` or `planet17-r5.zip` from the [releases page](../../releases) and print the seven parts. Or use the STLs in [`stl/`](stl/).
+Download `planet17-r4.zip` or `planet17-r5.zip` from the [releases page](https://github.com/tahakocp/planet17/releases) and print the seven parts. Or use the STLs in [`stl/`](stl/).
 
 | | r4 (default) | r5 |
 |---|---|---|
